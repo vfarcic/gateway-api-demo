@@ -1,0 +1,18 @@
+---
+
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: silly-demo
+  labels:
+    app.kubernetes.io/name: silly-demo
+spec:
+  parentRefs:
+    - kind: Gateway
+      name: http
+  hostnames:
+    - silly-demo.34.107.252.169.nip.io
+  rules:
+    - backendRefs:
+        - name: silly-demo
+          port: 8080
