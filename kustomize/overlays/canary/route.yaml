@@ -1,5 +1,4 @@
 ---
-
 apiVersion: gateway.networking.k8s.io/v1beta1
 kind: HTTPRoute
 metadata:
@@ -11,13 +10,13 @@ spec:
     - kind: Gateway
       name: http
   hostnames:
-    - silly-demo.34.102.168.52.nip.io
+    - silly-demo.34.111.119.195.nip.io
   rules:
     - matches:
         - headers:
-          - type: Exact
-            name: type
-            value: canary
+            - type: Exact
+              name: type
+              value: canary
       backendRefs:
         - name: silly-demo-canary
           port: 8080
